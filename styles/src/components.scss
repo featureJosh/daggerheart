@@ -4,8 +4,8 @@
 /*  component style partials.
 /* =================================== */
 
-@import "components/counters";
-@import "components/tooltips";
-@import "components/treasure-tracker";
-@import "components/rollable";
-@import "components/itemList";
+@use "components/counters";
+@use "components/tooltips";
+@use "components/treasure-tracker";
+@use "components/rollable";
+@use "components/itemList";

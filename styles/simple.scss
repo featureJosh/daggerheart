@@ -11,21 +11,21 @@
    ============================================ */
 
 /* Foundation Layer */
-@import "src/foundation";
-@import "src/base";
+@use "src/foundation";
+@use "src/base";
 
 /* Layout Layer */
-@import "src/layout";
+@use "src/layout";
 
 /* Components Layer */
-@import "src/components";
+@use "src/components";
 
 /* Feature Layer */
-@import "src/header";
-@import "src/character";
-@import "src/dialogs";
-@import "src/chat";
-@import "src/rest";
-@import "src/tabs";
-@import "src/editor";
-@import "src/attribute-popups";
+@use "src/header";
+@use "src/character";
+@use "src/dialogs";
+@use "src/chat";
+@use "src/rest";
+@use "src/tabs";
+@use "src/editor";
+@use "src/attribute-popups";

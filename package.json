@@ -1,0 +1,23 @@
+{
+  "name": "daggerheart",
+  "version": "1.0.0",
+  "description": "CSS compiler for the Daggerheart system",
+  "scripts": {
+    "start": "npm run gulp",
+    "css": "gulp css",
+    "watch": "gulp",
+    "gulp": "gulp"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {}
+}
