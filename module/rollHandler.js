@@ -37,13 +37,13 @@ async function _handleAutomaticFearGain(message) {
   if (game.paused) return;
   
   // Handle fear rolls (standalone or duality with fear)
-  if (flags.rollType === "fear" || (flags.rollType === "duality" && flags.isFear && !flags.reaction)) {
+  if (flags.rollType === "fear" || (flags.isDuality && flags.isFear && !flags.reaction)) {
     // Use socket-based fear gain to avoid permission issues
     await _requestFearGain(1, "roll with Fear");
   }
   
   // Handle hope/critical from duality rolls
-  if (flags.rollType === "duality" && !flags.reaction && (flags.isHope || flags.isCrit)) {
+  if (flags.isDuality && !flags.reaction && (flags.isHope || flags.isCrit)) {
     // Find the character for hope automation
     let targetActor = null;
     
@@ -849,7 +849,8 @@ export async function _dualityWithDialog(config) {
       rolls: [result.roll],
       flags: {
         daggerheart: {
-          rollType: "duality", // Always set to duality for duality rolls
+          rollType: pendingRollType || "duality", // Use pending roll type for attack rolls, fallback to duality
+          isDuality: true, // Always true for duality rolls - needed for dice styling and automation
           weaponName: pendingWeaponName,
           actorId: actor?.id,
           actorType: actor?.type,
